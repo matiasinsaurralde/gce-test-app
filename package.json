@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/matiasinsaurralde/gce-test-app/issues"
   },
-  "homepage": "https://github.com/matiasinsaurralde/gce-test-app#readme"
+  "homepage": "https://github.com/matiasinsaurralde/gce-test-app#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
