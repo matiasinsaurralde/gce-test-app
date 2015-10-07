@@ -3,8 +3,10 @@
 var express = require( 'express' ),
     app = express();
 
+app.use( express.static( './public' ) );
 
-app.get( '/', function( req, res ) {
+
+app.get( '/test', function( req, res ) {
   res.status(200).send( 'test' );
 });
 
