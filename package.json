@@ -1,0 +1,19 @@
+{
+  "name": "gce-test-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiasinsaurralde/gce-test-app.git"
+  },
+  "author": "Matias Insaurralde <matias@insaurral.de>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matiasinsaurralde/gce-test-app/issues"
+  },
+  "homepage": "https://github.com/matiasinsaurralde/gce-test-app#readme"
+}
