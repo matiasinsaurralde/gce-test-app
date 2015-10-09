@@ -1,0 +1,22 @@
+{
+  "name": "gce-test-app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/matiasinsaurralde/gce-test-app",
+  "authors": [
+    "Matias Insaurralde <matias@insaurral.de>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "deck.js-material": "~0.1.0"
+  }
+}
