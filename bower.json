@@ -17,6 +17,13 @@
     "tests"
   ],
   "dependencies": {
-    "deck.js-material": "~0.1.0"
+    "deck.js-material": "~0.1.0",
+    "bourbon": "~4.2.5",
+    "neat": "~1.7.2",
+    "google-material-color": "~1.2.6",
+    "google-material-icons": "~0.1.0"
+  },
+  "resolutions": {
+    "google-material-color": "1.2.0"
   }
 }
