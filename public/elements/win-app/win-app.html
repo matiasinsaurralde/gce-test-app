@@ -42,7 +42,13 @@
             source: String
         },
         ganadoresLoaded: function(event, response) {
-            this.ganadores = response.response;
+//            this.ganadores = response.response;
+		this.ganadores = this.sortear(response.response).slice(0, 2);
+        },
+        sortear: function(array) {
+            return array.sort(function() {
+                return 0.5 - Math.random();
+            });
         }
     });
 
