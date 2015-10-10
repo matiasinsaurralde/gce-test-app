@@ -6,7 +6,7 @@ var express = require( 'express' ),
     chance = new Chance(),
     urlencodedParser = bodyParser.urlencoded({ extended: false }),
     app = express(),
-    people = [];
+    people = [ ];
 
 app.use( express.static( './public' ) );
 
@@ -15,8 +15,8 @@ app.post( '/', urlencodedParser, function( req, res ) {
   res.redirect( '/' );
 });
 
-app.get( '/supersorteo', function( req, res ) {
-  res.send( chance.pick( people ) );
+app.get( '/ganador.json', function( req, res ) {
+  res.json( chance.pick( people, 3 ) );
 });
 
 var server = app.listen( process.env.PORT || 8080, function () {
