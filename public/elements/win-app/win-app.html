@@ -1,0 +1,58 @@
+<dom-module id="win-app">
+	<style>
+
+
+
+      #section1 {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: #8de6ff;
+      }
+      #div {
+	top: 50%;
+
+
+        box-sizing: border-box;
+				bottom: 0;
+				height: 30%;
+				width: 50%;
+				left: 0;
+				margin: auto;
+				position: absolute;
+				top: 0;
+				right: 0;
+        color: rgb(255, 255, 255);
+        font-size: 100px;
+        background-color: #3b86ff;
+				text-align:center;
+				vertical-align: middle;
+				padding-top:30;
+      }
+
+	</style>
+
+  <template>
+<section id="section1" fit layout vertical center-justified>
+      <div id="div">
+        <span id="span">+d</span>
+      </div>
+<section>
+  </template>
+</dom-module>
+  <script>
+
+    Polymer({
+        is: 'win-app',
+        properties: {
+            source: String
+        },
+        logosLoaded: function(event, response) {
+            this.logoBlocks = response.response;
+        }
+    });
+
+  </script>

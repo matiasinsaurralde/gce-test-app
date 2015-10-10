@@ -1,0 +1,35 @@
+<dom-module id="registro-goo">
+	<style>
+		paper-progress { --paper-progress-active-color: #e91e63;}
+		paper-progress { --paper-progress-secondary-color: #f8bbd0;}
+		paper-progress {
+		  --paper-progress-container-color: #64ffda;
+		}
+		paper-progress {
+		  --paper-progress-transition-duration: 0.08s;
+		  --paper-progress-transition-timing-function: ease;
+		  --paper-progress-transition-transition-delay: 0s;
+		}
+	</style>
+	<template>
+		<div class="content center">
+			<!--<google-signin label-signin="Bienvenido" client-id="931194667909-128h7k4iaqu71d9i4c7nfjlkvp5hclb1.apps.googleusercontent.com" scopes=""></google-signin>-->
+			<paper-item>
+				<paper-progress indeterminate value="10" secondary-progress="30"></paper-progress>
+			</paper-item>
+		</div>
+	</template>
+
+</dom-module>
+
+<script>
+  // element registration
+  Polymer({
+    is: "registro-goo",
+
+    // add properties and methods on the element's prototype
+    properties: {
+
+  	}
+	})
+</script>

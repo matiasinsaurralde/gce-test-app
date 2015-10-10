@@ -1,0 +1,67 @@
+<dom-module id="register-block">
+    <template>
+        <style>
+            :host {
+                display: block;
+                background: var(--default-primary-color);
+                color: #fff;
+            }
+
+            .container {
+                padding-bottom: 35px;
+            }
+
+            .additional-info {
+                margin-top: -5px;
+                font-size: 13px;
+            }
+
+            .open-dialog-button {
+                margin-top: 30px;
+            }
+
+            paper-dialog {
+                background: #fff;
+            }
+
+            @media (min-height: 400px) {
+                paper-dialog {
+                    min-height: 380px;
+                }
+            }
+
+            paper-dialog .buttons {
+                color: initial;
+            }
+        </style>
+        <div id="sorteo-form" class="container wrap relative layout vertical text-center">
+            <h4 class="heading">DevFest Asunción 2015</h4>
+
+            <span class="details">Bienvenido, inscribite y ganate una remera del evento.</span>
+            <div class="flex">
+                <paper-button class="white border-button open-dialog-button" on-tap="openRegisterDialog">Inscribirse</paper-button>
+            </div>
+        </div>
+        <paper-dialog id="registerDialog" entry-animation="scale-up-animation" exit-animation="fade-out-animation" modal>
+                <!--<div id="2event_tickets_widget" style="width: 640px; height: 300px; background:#fff;"></div>-->
+			<div style="width: 640px; height: 300px; background:#fff;"><subscribe-app></subscribe-app></div>
+            <div class="buttons">
+		  <paper-button raised on-tap="sendMail">Enviar</paper-button>
+            </div><!---->
+        </paper-dialog>
+    </template>
+</dom-module>
+<script>
+
+    Polymer({
+        is: 'register-block',
+        openRegisterDialog: function() {
+            ga('send', 'buy-a-ticket', 'button', 'click'); // jshint ignore:line
+            this.$.registerDialog.open();
+        },
+       closeRegisterDialog: function() {
+            ga('send', 'buy-a-ticket', 'button', 'click'); // jshint ignore:line
+            this.$.registerDialog.close();
+        },
+    });
+</script>

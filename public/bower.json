@@ -1,0 +1,43 @@
+{
+  "name": "ToDo",
+  "version": "0.0.0",
+  "authors": [
+    "Kevin Gleason <kaagleason@gmail.com>"
+  ],
+  "description": "A ToDo List using PubNub and Polymer",
+  "main": "index.html",
+  "keywords": [
+    "Polymer",
+    "PubNub",
+    "Todo",
+    "List"
+  ],
+  "license": "MIT",
+  "homepage": "http://kevingleason.me/Todo/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-map": "GoogleWebComponents/google-map#~1.1.0",
+    "google-signin": "GoogleWebComponents/google-signin#~1.1.0",
+    "iron-icons": "polymerelements/iron-icons#~1.0.3",
+    "iron-input": "polymerelements/iron-input#^1.0.0",
+    "paper-button": "PolymerElements/paper-button#~1.0.3",
+    "paper-card": "PolymerElements/paper-card#~1.0.4",
+    "paper-checkbox": "polymerelements/paper-checkbox#^1.0.1",
+    "paper-drawer-panel": "polymerelements/paper-drawer-panel#~1.0.2",
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#~1.0.2",
+    "paper-fab": "polymerelements/paper-fab#~1.0.2",
+    "paper-input": "polymerelements/paper-input#~1.0.5",
+    "paper-menu": "polymerelements/paper-menu#~1.0.0",
+    "paper-slider": "PolymerElements/paper-slider#~1.0.4",
+    "polymer": "Polymer/polymer#^1.0.0",
+    "pubnub-element": "~4.0.0",
+    "paper-progress": "PolymerElements/paper-progress#~1.0.7",
+    "iron-form": "PolymerElements/iron-form#~1.0.9"
+  }
+}
