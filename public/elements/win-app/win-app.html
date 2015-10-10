@@ -1,47 +1,38 @@
 <dom-module id="win-app">
+    <template>
 	<style>
 
-
-
       #section1 {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0px;
-        left: 0px;
+	padding-top:0px;
+	height:100%;
         background-color: #8de6ff;
       }
       #div {
-	top: 50%;
-
-
+	margin:auto;
         box-sizing: border-box;
-				bottom: 0;
-				height: 30%;
-				width: 50%;
-				left: 0;
-				margin: auto;
-				position: absolute;
-				top: 0;
-				right: 0;
+	bottom: 0;
+	width: 70%;
         color: rgb(255, 255, 255);
-        font-size: 100px;
+        font-size: 50px;
         background-color: #3b86ff;
-				text-align:center;
-				vertical-align: middle;
-				padding-top:30;
+	text-align:center;
+	vertical-align: middle;
+	padding:30;
       }
+	#mail{
+		font-size: 30px; 
+	}
 
 	</style>
-
-  <template>
-<section id="section1" fit layout vertical center-justified>
-      <div id="div">
-        <span id="span">+d</span>
-      </div>
-<section>
-  </template>
+	<iron-ajax auto url="[[source]]" handle-as="json" on-response="ganadoresLoaded" debounce-duration="300"></iron-ajax>
+        <div class="container relative layout vertical center" id="section1">
+	  <template is="dom-repeat" items="[[ganadores]]" as="gano">
+		<div class="logos-block-wrapper" id="div">
+			<span id="span">[[gano.nombre]]</span>	> <span id="mail">[[gano.mail]]</span>
+		</div>
+	  </template>
+	</div>
+    </template>
 </dom-module>
   <script>
 
@@ -50,8 +41,8 @@
         properties: {
             source: String
         },
-        logosLoaded: function(event, response) {
-            this.logoBlocks = response.response;
+        ganadoresLoaded: function(event, response) {
+            this.ganadores = response.response;
         }
     });
 
