@@ -1,0 +1,44 @@
+<dom-module id="subscribe-app">
+  
+	<template>
+
+	      <div class="horizontal-section">
+		<form is="iron-form-submit" id="formPost" method="post" action="/">
+			<paper-input label="&nbsp;&nbsp;Nombre y Apellido">
+				<iron-icon prefix icon="account-circle" ></iron-icon>
+				<paper-icon-button suffix onclick="clearInput()" icon="clear" alt="Limpiar" title="Limpiar" class="min">
+				</paper-icon-button>
+			</paper-input>
+			<paper-input label="&nbsp;&nbsp;Ingrese su mail">
+				<iron-icon prefix icon="mail" ></iron-icon>
+				<paper-icon-button suffix onclick="clearInput()" icon="clear" alt="Limpiar" title="Limpiar" class="min">
+				</paper-icon-button>
+			</paper-input>
+
+		  <br><br><br>
+		  <paper-button raised on-tap="sendMail">Enviar</paper-button>
+		</form>
+	      </div>
+
+	</template>
+
+</dom-module>
+
+<script>
+
+  // element registration
+
+    function clickHandler(event) {
+      Polymer.dom(event).localTarget.parentElement.submit();
+    }
+
+
+  // element registration
+  Polymer({
+	    is: "subscribe-app",
+		sendMail: function() {
+		      Polymer.dom(event).localTarget.parentElement.submit();
+		    }
+	})
+
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="../bower_components/polymer/polymer.html" rel="import">
+	<link href="../bower_components/paper-checkbox/paper-checkbox.html" rel="import">
+	<link href="../bower_components/paper-item/paper-item.html" rel="import">
+	<link href="../bower_components/paper-input/paper-input.html" rel="import">
+	<link href="../bower_components/paper-material/paper-material.html" rel="import">
+	<link href="../bower_components/iron-icons/iron-icons.html" rel="import">
+	<link href="../bower_components/paper-fab/paper-fab.html" rel="import">
+	<link rel="import" href="../bower_components/google-map/google-map.html">	
+<!-- 	<link href="../bower_components/iron-input/iron-input.html" rel="import"> -->
+<!-- 	<link href="../bower_components/paper-button/paper-button.html" rel="import"> -->
+</head>
+
+<dom-module id="todo-element" attributes="task user rid">
+  <style>
+    /* CSS rules for your element */
+
+
+		:host {
+    	display: block; height: 100%; width: 100%; padding:0; margin:0;
+		}
+
+		google-map {
+			display: block; height: 100%; width: 100%; padding:0; margin:0;
+		}
+
+		.todo{margin:0; padding:0;}
+    
+  </style>
+  <template>
+    <!-- local DOM for your element -->
+	
+    <paper-material class="todo" elevation="1">
+				<google-map latitude="-25.30066" longitude="-57.63591" zoom="16">hooa
+					<google-map-marker latitude="-25.30066" longitude="-57.63592" draggable="true" title="Hola!"></google-map-marker>
+					<google-map-marker latitude="-25.30066" longitude="-57.63511"></google-map-marker>
+				</google-map>
+    </paper-material> <!-- data bindings in local DOM -->
+
+  </template>
+</dom-module>
+
+<script>
+  // element registration
+  Polymer({
+    is: "todo-element",
+
+    // add properties and methods on the element's prototype
+
+    properties: {
+    	// declare properties for the element's public API
+		user: {
+			type: String,
+			value: ""	
+		},
+		task: {
+        	type: String,
+			value: "mapa!"
+    	},
+    	rid: {
+	    	type: Number,
+	    	value: -1
+    	},
+    	time: {
+	    	type: String,
+	    	value: new Date().toLocaleString()
+	    },
+		completed: {
+	    	type: Boolean,
+			value: false,
+			observer:'compChanged'
+    	},
+    	editing: {
+	    	type: Boolean,
+	    	value: false	
+    	}
+    },
+    compChanged: function(e){
+	    if(e){ this.fire('complete',this); }
+    },
+    doEdit: function(e){
+    	this.editing=!this.editing;
+    	if (!this.editing){ this.fire('edit', {rid:this.rid, task:this.task}); }
+	},
+	ready: function(e){
+	}
+  });
+</script>
