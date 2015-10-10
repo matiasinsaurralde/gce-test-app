@@ -1,0 +1,266 @@
+//
+// Deck Style
+//
+
+body
+  font-size: $em-base
+  background-color: $background-color
+
+a
+  text-decoration: none
+  color: $anchor-color
+
+  &:hover
+    color: $anchor-color-hover
+
+button
+  +material-button
+
+#{$deck-container}
+  font-family: $slide-font-mobile
+  background-color: $background-color
+  color: $slide-color
+
+  @media #{$xga}
+    overflow-y: hidden
+    font-family: $slide-font
+
+  h1, h2, h3, h4, h5, h6
+    font-family: $header-font
+    font-weight: $header-font-weight
+
+  h1
+    top: 30vh
+    width: 100vw
+    font-size: $deck-title-font-size-mobile
+    color: $deck-title-color
+
+    @media #{$xga}
+      width: auto
+      font-size: $deck-title-font-size
+
+  h2
+    position: relative
+    padding-left: 2.5 * $side-margin
+    padding-top: initial
+    background-color: $slide-title-background
+    border: none
+    +slide-title-style
+    +shadow-level(1)
+
+    @media #{$xga}
+      padding-left: $side-margin
+      font-size: $slide-title-font-size
+
+    &::after
+      display: none
+
+      @media #{$xga}
+        display: inline
+        position: absolute
+        bottom: rem(5)
+        right: $side-margin
+        font-size: (6 / 7) * $slide-title-font-size
+
+  h3
+    @media #{$xga}
+      font-size: (5 / 3) * $slide-font-size
+
+  p, ul, ol
+    @media #{$xga}
+      margin-left: initial
+      font-size: $slide-font-size
+
+  figure
+    +shadow-level($figure-shadow)
+    margin-bottom: 1rem
+    padding: $figure-padding
+    border-radius: $figure-border-radius
+
+    img
+      width: 100%
+
+  cite
+    font-size: $slide-font-size-small
+
+  div.MathJax_Display
+    overflow-x: auto
+    overflow-y: hidden
+
+  .slide .content
+    +outer-container
+
+    @media #{$xga}
+      padding-left: $side-margin
+      padding-right: $side-margin
+
+      ul, ol
+        padding-left: 2rem
+
+        &.inline
+          list-style: none
+
+          li
+            display: inline-block
+            margin-right: 2rem
+
+      @each $tag in p, ol, ul
+        @media #{$xga}
+          #{$tag}.small
+            font-size: $slide-font-size-small
+
+          #{$tag}.large
+            font-size: $slide-font-size-large
+
+      .right
+        text-align: right
+
+      .full
+        +span-columns(12)
+
+        &.center
+          text-align: center
+
+      .half
+        +span-columns(6)
+
+        &.center
+          +shift(3)
+
+      .one-third
+        +span-columns(4)
+
+        &.center
+          +shift(4)
+
+      .two-thirds
+        +span-columns(8)
+
+        &.center
+          +shift(2)
+
+      .one-forth
+        +span-columns(3)
+
+      .three-forths
+        +span-columns(9)
+
+      .omega
+        +omega
+
+  #{$deck-header}, #{$deck-footer}
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    @media #{$xga}
+      align-items: center
+
+    h1
+      position: initial
+
+    ul.authors, ul.colophon
+      width: 100wv
+      margin: 0
+      text-align: center
+      list-style-type: none
+      font-family: $author-font
+      font-weight: $author-font-weight
+      color: $author-color
+
+      @media #{$xga}
+        width: auto
+
+      li
+        padding: 0
+
+      a
+        color: $author-color
+
+      .author
+        font-size: $author-font-size-mobile
+
+        @media #{$xga}
+          font-size: $author-font-size
+
+      .connector
+        font-size: (3 / 8) * $author-font-size
+
+      .coauthor
+        font-size: $coauthor-font-size-mobile
+
+        @media #{$xga}
+          font-size: $coauthor-font-size
+
+    .url
+      display: none
+
+      @media #{$xga}
+        display: block
+        position: absolute
+        bottom: $bottom-margin
+        left: $side-margin
+
+        .short_url
+          display: block
+          font-family: $header-font
+          font-size: $deck-title-font-size
+          font-weight: $header-font-weight
+
+        @if $qrcode
+          .qrcode
+            +background-image('qr', $qrcode-size, $qrcode-size)
+            width: $qrcode-container-size
+            height: $qrcode-container-size
+            border-radius: rem(10)
+            +shadow-level(2)
+
+    .logos
+      display: flex
+      justify-content: center
+      position: absolute
+      bottom: $bottom-margin
+      width: 100vw
+
+      @media #{$xga}
+        right: $side-margin
+        width: auto
+
+    @each $logo, $info in $logos
+      .logo-#{$logo}
+        +logo($info...)
+
+    ul.colophon
+      @media #{$xga}
+        font-size: $colophon-font-size
+
+//
+// Deck UI
+//
+
+.deck-status
+  position: absolute
+  top: 0
+  left: rem(2)
+  z-index: 50
+  +slide-title-style
+
+  @media #{$xga}
+    top: initial
+    left: initial
+    right: $side-margin
+    bottom: $bottom-margin
+    color: $slide-color
+
+.notes-link
+  position: absolute
+  top: rem(4)
+  right: $side-margin
+  z-index: 50
+  +vector-img("#{$image-path}/ic_description_48px-white.svg", 25px)
+
+  @media #{$xga}
+    top: initial
+    left: $side-margin
+    bottom: $bottom-margin
+    background-image: image-url('material-design-icons/action/svg/production/ic_description_48px.svg', 30px)

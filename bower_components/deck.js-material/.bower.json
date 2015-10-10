@@ -1,0 +1,48 @@
+{
+  "name": "deck.js-material",
+  "version": "0.1.0",
+  "authors": [
+    "Evan Sosenko <razorx@evansosenko.com>"
+  ],
+  "description": "Material theme for deck.js.",
+  "main": "stylesheets/main.sass",
+  "keywords": [
+    "deck.js",
+    "theme",
+    "sass",
+    "css"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/razor-x/deck.js-material",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "build",
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile"
+  ],
+  "devDependencies": {
+    "deck.js": "~1.1.0",
+    "bourbon": "~4.2.0",
+    "neat": "~1.7.1"
+  },
+  "dependencies": {
+    "google-material-color": "1.2.0",
+    "paper-shadows": "1.0.0",
+    "material-design-icons": "~1.0.1"
+  },
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "13fb34a7d4beadd530d4e1a6c0296eaed738bd5c"
+  },
+  "_source": "git://github.com/razor-x/deck.js-material.git",
+  "_target": "~0.1.0",
+  "_originalSource": "deck.js-material",
+  "_direct": true
+}
