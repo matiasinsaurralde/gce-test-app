@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="theme-color" content="#00BCD4">
+		<meta name="msapplication-TileColor" content="#00BCD4">
+
+		<!-- Homescreen for Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="DevFest Project">
+		
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#00BCD4">
+		<meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+		<link rel="import" href="elements/elements.html">
+
+		<link rel="stylesheet" href="styles/main.css">
+
+		<style>
+
+		      :host {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+		      }
+
+		</style>
+
+
+	</head>
+	<body id="body" unresolved class="fullbleed layout vertical">
+	    <span id="browser-sync-binding"></span>
+	    <template is="dom-bind" id="app">
+		<win-app source="ganador.json"></win-app>
+	    </template>
+	</body>
+</html>
