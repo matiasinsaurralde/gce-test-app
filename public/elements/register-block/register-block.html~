@@ -43,11 +43,7 @@
             </div>
         </div>
         <paper-dialog id="registerDialog" entry-animation="scale-up-animation" exit-animation="fade-out-animation" modal>
-                <!--<div id="2event_tickets_widget" style="width: 640px; height: 300px; background:#fff;"></div>-->
-			<div style="width: 640px; height: 300px; background:#fff;"><subscribe-app></subscribe-app></div>
-            <div class="buttons">
-		  <paper-button raised on-tap="sendMail">Enviar</paper-button>
-            </div><!---->
+		<div style="width: 640px; height: 300px; background:#fff;"><subscribe-app></subscribe-app></div>
         </paper-dialog>
     </template>
 </dom-module>
@@ -56,12 +52,8 @@
     Polymer({
         is: 'register-block',
         openRegisterDialog: function() {
-            ga('send', 'buy-a-ticket', 'button', 'click'); // jshint ignore:line
+            ga('send', 'participar', 'button', 'click'); // jshint ignore:line
             this.$.registerDialog.open();
-        },
-       closeRegisterDialog: function() {
-            ga('send', 'buy-a-ticket', 'button', 'click'); // jshint ignore:line
-            this.$.registerDialog.close();
-        },
+        }
     });
 </script>

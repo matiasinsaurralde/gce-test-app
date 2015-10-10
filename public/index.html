@@ -35,8 +35,17 @@
 	</head>
 	<body unresolved fullbleed layout vertical>
 	    <template id="t" is="dom-bind">
-			</br>
-				<register-block></register-block>
+		<register-block></register-block>
+
+		<paper-dialog id="thanksDialog" entry-animation="scale-up-animation" exit-animation="fade-out-animation" modal>
+			<div style="width: 640px; height: 300px; background:#fff;">
+				<span class="details">Gracias, ya estás participando.</span>
+			</div>
+		    <div class="buttons">
+			<paper-button dialog-confirm>Cerrar</paper-button>
+		    </div><!-- -->
+		</paper-dialog>
+
 	    </template>
 	</body>
 </html>
